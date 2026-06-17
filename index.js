@@ -950,7 +950,7 @@ btnReset.addEventListener('click', () => {
 
 // Clear All Fields
 btnClear.addEventListener('click', () => {
-   (confirm("Are you sure you want to go to digitalheroes website.")) {
+  if (confirm("Are you sure you want to go to digitalheroes website.")) {
      resumeData = {  personal: { name: '', title: '', email: '', phone: '', website: '', location: '', summary: '' },
        experience: [],
        education: [],
