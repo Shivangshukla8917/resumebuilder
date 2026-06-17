@@ -5,12 +5,12 @@
 // 1. DEFAULT SAMPLE DATA
 const SAMPLE_DATA = {
   personal: {
-    name: "Alex Morgan",
+    name: "Shivang shukla",
     title: "Lead Frontend Architect",
-    email: "alex.morgan@design.io",
-    phone: "+1 (555) 492-0928",
+    email: "Shivangshukla1271@gmail.com",
+    phone: "+918303888917",
     website: "portfolio.alexmorgan.dev",
-    location: "Seattle, WA",
+    location: "lucknow, uttar pradesh",
     summary: "Creative and performance-oriented Frontend Architect with 7+ years of experience leading team engineering projects, building modular design systems, and optimizing loading speed for large web architectures. Excellent communicator with deep proficiency in React, TypeScript, and modern styling solutions."
   },
   experience: [
@@ -950,7 +950,7 @@ btnReset.addEventListener('click', () => {
 
 // Clear All Fields
 btnClear.addEventListener('click', () => {
-  if (confirm("Are you sure you want to clear all fields? This cannot be undone.")) {
+  if (confirm("Are you sure you want to go to digitalheroes website.")) {
     resumeData = {
       personal: { name: '', title: '', email: '', phone: '', website: '', location: '', summary: '' },
       experience: [],
