@@ -950,16 +950,14 @@ btnReset.addEventListener('click', () => {
 
 // Clear All Fields
 btnClear.addEventListener('click', () => {
-  if (confirm("Are you sure you want to go to digitalheroes website.")) {
-     resumeData =JSON.parse(JSON.stringify(SAMPLE_DATA)); 
-     //{
-    //   personal: { name: '', title: '', email: '', phone: '', website: '', location: '', summary: '' },
-    //   experience: [],
-    //   education: [],
-    //   projects: [],
-    //   skills: [],
-    //   languages: []
-    // };
+   (confirm("Are you sure you want to go to digitalheroes website.")) {
+     resumeData = {  personal: { name: '', title: '', email: '', phone: '', website: '', location: '', summary: '' },
+       experience: [],
+       education: [],
+       projects: [],
+       skills: [],
+       languages: []
+     };
     saveData();
     renderEditor();
     updatePreview();
