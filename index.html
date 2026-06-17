@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeCraft Pro - Premium Resume Builder</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Main Toolbar -->
+    <header class="app-header">
+      <div class="header-logo">
+        <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+        <h1>ResumeCraft <span class="logo-accent">Pro</span></h1>
+      </div>
+      <div class="header-controls">
+        <!-- Template Selection -->
+        <div class="control-group">
+          <label for="template-select"><i class="fa-solid fa-palette"></i> Template:</label>
+          <select id="template-select" class="premium-select">
+            <option value="modern" selected>Modern Professional</option>
+            <option value="elegant">Elegant Minimalist</option>
+            <option value="creative">Creative Sidebar</option>
+          </select>
+        </div>
+
+        <!-- Primary Actions -->
+        <button id="btn-export" class="btn btn-primary" title="Export Resume to PDF">
+          <i class="fa-solid fa-file-pdf"></i> Export PDF
+        </button>
+        <button id="btn-reset" class="btn btn-secondary" title="Reset to Sample Data">
+          <i class="fa-solid fa-rotate-left"></i> Sample Data
+        </button>
+        <button id="btn-clear" class="btn btn-danger" title="Clear all fields">
+          <i class="fa-solid fa-trash-can"></i> Clear
+        </button>
+        <button id="theme-toggle" class="btn btn-icon" title="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-sun icon-sun"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Workspace -->
+    <main class="workspace">
+      <!-- Left Pane: Editor -->
+      <aside class="editor-pane">
+        <div class="editor-sections">
+          <!-- SECTION: Personal Info -->
+          <div class="accordion-item expanded" id="sec-personal">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-user-tie"></i> Personal Information</span>
+              <i class="fa-solid fa-chevron-down fold-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <div class="grid-2-col">
+                <div class="form-group">
+                  <label for="input-name">Full Name</label>
+                  <input type="text" id="input-name" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                  <label for="input-title">Professional Title</label>
+                  <input type="text" id="input-title" placeholder="Senior Product Designer">
+                </div>
+              </div>
+              <div class="grid-2-col">
+                <div class="form-group">
+                  <label for="input-email">Email Address</label>
+                  <input type="email" id="input-email" placeholder="john.doe@example.com">
+                </div>
+                <div class="form-group">
+                  <label for="input-phone">Phone Number</label>
+                  <input type="tel" id="input-phone" placeholder="+1 (555) 019-2834">
+                </div>
+              </div>
+              <div class="grid-2-col">
+                <div class="form-group">
+                  <label for="input-website">Website / Portfolio</label>
+                  <input type="text" id="input-website" placeholder="johndoe.design">
+                </div>
+                <div class="form-group">
+                  <label for="input-location">Location</label>
+                  <input type="text" id="input-location" placeholder="New York, NY">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="input-summary">Professional Summary</label>
+                <textarea id="input-summary" rows="4"
+                  placeholder="Briefly describe your professional background, key strengths, and career goals..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: Work Experience -->
+          <div class="accordion-item" id="sec-experience">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-briefcase"></i> Work Experience</span>
+              <i class="fa-solid fa-chevron-down fold-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <div id="experience-list" class="dynamic-list">
+                <!-- Dynamic items will go here -->
+              </div>
+              <button class="btn btn-add" id="btn-add-experience">
+                <i class="fa-solid fa-plus"></i> Add Work Experience
+              </button>
+            </div>
+          </div>
+
+          <!-- SECTION: Education -->
+          <div class="accordion-item" id="sec-education">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-graduation-cap"></i> Education</span>
+              <i class="fa-solid fa-chevron-down fold-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <div id="education-list" class="dynamic-list">
+                <!-- Dynamic items will go here -->
+              </div>
+              <button class="btn btn-add" id="btn-add-education">
+                <i class="fa-solid fa-plus"></i> Add Education
+              </button>
+            </div>
+          </div>
+
+          <!-- SECTION: Projects -->
+          <div class="accordion-item" id="sec-projects">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-code-fork"></i> Projects</span>
+              <i class="fa-solid fa-chevron-down fold-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <div id="projects-list" class="dynamic-list">
+                <!-- Dynamic items will go here -->
+              </div>
+              <button class="btn btn-add" id="btn-add-project">
+                <i class="fa-solid fa-plus"></i> Add Project
+              </button>
+            </div>
+          </div>
+
+          <!-- SECTION: Skills -->
+          <div class="accordion-item" id="sec-skills">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-screwdriver-wrench"></i> Skills</span>
+              <i class="fa-solid fa-chevron-down fold-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <div id="skills-list" class="dynamic-list">
+                <!-- Dynamic items will go here -->
+              </div>
+              <button class="btn btn-add" id="btn-add-skill">
+                <i class="fa-solid fa-plus"></i> Add Skill
+              </button>
+            </div>
+          </div>
+
+          <!-- SECTION: Languages -->
+          <div class="accordion-item" id="sec-languages">
+            <button class="accordion-header">
+              <span><i class="fa-solid fa-language"></i> Languages</span>
+              <i class="fa-solid fa-chevron-down fold-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <div id="languages-list" class="dynamic-list">
+                <!-- Dynamic items will go here -->
+              </div>
+              <button class="btn btn-add" id="btn-add-language">
+                <i class="fa-solid fa-plus"></i> Add Language
+              </button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Pane: Preview -->
+      <section class="preview-pane">
+        <div class="preview-toolbar">
+          <div class="preview-status">
+            <span class="status-dot"></span> Real-time Sync Active
+          </div>
+          <div class="zoom-controls">
+            <button id="btn-zoom-out" class="btn btn-icon-sm" title="Zoom Out"><i
+                class="fa-solid fa-minus"></i></button>
+            <span id="zoom-level">100%</span>
+            <button id="btn-zoom-in" class="btn btn-icon-sm" title="Zoom In"><i class="fa-solid fa-plus"></i></button>
+            <button id="btn-zoom-fit" class="btn btn-icon-sm" title="Fit to Screen"><i
+                class="fa-solid fa-expand"></i></button>
+          </div>
+        </div>
+
+        <!-- Document wrapper handles zooming scaling -->
+        <div class="resume-wrapper">
+          <div id="resume-preview" class="resume-page template-modern">
+            <!-- Rendered resume layout will be injected here via Javascript -->
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="index.js"></script>
+</body>
+
+</html>
